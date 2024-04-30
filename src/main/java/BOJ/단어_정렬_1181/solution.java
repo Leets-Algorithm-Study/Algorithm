@@ -21,11 +21,10 @@ public class solution {
             st = new StringTokenizer(br.readLine());
 
             String word = st.nextToken();
-//            if (/* 중복 삭제 */)
-                words[i] = word;
+            words[i] = word;
         }
 
-        words = new HashSet<>(Arrays.asList(words)).toArray(new String[0]);
+        words = new HashSet<>(Arrays.asList(words)).toArray(new String[0]); // List -> Set -> List (중복 제거)
 
         insertionSort();
 //        quickSort(0, words.length - 1);

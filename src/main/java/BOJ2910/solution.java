@@ -15,6 +15,7 @@ public class solution {
                     list[j] = list[j+1];
                     list[j+1] = tmp;
                 }
+                //가입 순은 굳이 정렬 필요없음
             }
         }
 

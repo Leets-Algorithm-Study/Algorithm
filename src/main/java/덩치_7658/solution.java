@@ -1,4 +1,4 @@
-package BOJ7658;
+package 덩치_7658;
 
 import java.io.BufferedReader;
 import java.io.IOException;

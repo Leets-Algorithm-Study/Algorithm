@@ -1,4 +1,4 @@
-package BOJ1966;
+package 프린터큐_1966;
 
 import java.io.BufferedReader;
 import java.io.IOException;

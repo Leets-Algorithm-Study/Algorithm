@@ -1,4 +1,4 @@
-package BOJ2910;
+package 빈도정렬_2910;
 
 import java.io.BufferedReader;
 import java.io.IOException;

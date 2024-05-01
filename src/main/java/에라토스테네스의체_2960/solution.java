@@ -1,4 +1,4 @@
-package BOJ2960;
+package 에라토스테네스의체_2960;
 
 import java.io.BufferedReader;
 import java.io.IOException;

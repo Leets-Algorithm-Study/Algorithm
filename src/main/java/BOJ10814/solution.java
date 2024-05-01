@@ -1,6 +1,18 @@
-package BOJ2910;
+package BOJ10814;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
+
+class Member{
+    int age;
+    String name;
+
+    public Member(int age, String name){
+        this.age = age;
+        this.name = name;
+    }
+}
 
 public class solution {
 
@@ -17,7 +29,6 @@ public class solution {
                 }
             }
         }
-
     }
 
     public static void selectSort(String[][] list){
@@ -39,20 +50,42 @@ public class solution {
         }
     }
 
+    public static void sort(Member[] members){
+        //Comparator 인스턴스 생성과 동시에 compare() 메서드를 오버라이드
+        Arrays.sort(members, new Comparator<Member>() {
+                    @Override
+                    public int compare(Member o1, Member o2) {
+                        if(o1.age == o2.age) return 0; // 나이 같으면 가입 순 그대로
+                        return Integer.compare(o1.age, o2.age); //Integer.compare(a,b) -> a가 작으면 음수, 같으면 0, 크면 양수
+                    }
+                }
+        );
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int testCnt = sc.nextInt();
         String[][] list = new String[testCnt][2];
+        Member[] members = new Member[testCnt];
         for (int i = 0; i < testCnt; i++) {
-            list[i][0] = sc.next(); //나이
-            list[i][1] = sc.next(); //이름
+            String age = sc.next();
+            String name = sc.next();
+            list[i][0] = age;
+            list[i][1] = name;
+            members[i] = new Member(Integer.parseInt(age), name);
+
         }
 
-        bubbleSort(list);
+        //bubbleSort(list);
         //selectSort(list);
+        sort(members);
 
-        for (String[] arr : list) {
-            System.out.println(arr[0] + " " + arr[1]);
+//        for (String[] arr : list) {
+//            System.out.println(arr[0] + " " + arr[1]);
+//        }
+
+        for(Member member: members){
+            System.out.println(member.age + " "+ member.name);
         }
     }
 }

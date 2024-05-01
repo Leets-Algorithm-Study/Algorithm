@@ -1,2 +1,4 @@
-package BOJ1431;public class solution {
+package BOJ1431;
+
+public class solution {
 }

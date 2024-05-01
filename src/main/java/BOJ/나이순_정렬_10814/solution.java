@@ -13,7 +13,7 @@ public class solution {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());   // 단어 개수 입력 받기
+        int n = Integer.parseInt(st.nextToken());   // 멤버 수 입력 받기
 
         members = new String[n][3];  // [입력 순서, 나이, 이름]
         for(int i = 0; i < n; i++) {

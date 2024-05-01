@@ -78,7 +78,7 @@ public class solution {
 
         //bubbleSort(list);
         //selectSort(list);
-        sort(members);
+        sort(members); //메모리: 109444KB, 시간: 1816ms
 
 //        for (String[] arr : list) {
 //            System.out.println(arr[0] + " " + arr[1]);

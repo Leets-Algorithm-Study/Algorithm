@@ -16,7 +16,7 @@ public class solution {
             }
         }
 
-        // 주 대각선을 제외한 나머지 원소들의 비트 AND 결과 구하고 출력
+        // 주 대각선을 제외한 나머지 원소들의 비트 OR 결과 구하고 출력
         for (int i = 0; i < n; i++) {
             int result = 0;
             for (int j = 0; j < n; j++) {

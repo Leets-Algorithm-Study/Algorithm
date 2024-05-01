@@ -20,6 +20,7 @@ public class solution {
         for (int i = 0; i < n; i++) {
             int result = 0;
             for (int j = 0; j < n; j++) {
+                if(i==j) continue;
                 result |= matrix[i][j];
             }
             System.out.print(result + " ");

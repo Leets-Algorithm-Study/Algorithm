@@ -1,4 +1,4 @@
-package 데드스타_11811;
+package main.java.BOJ.데드스타_11811;
 
 import java.util.Scanner;
 

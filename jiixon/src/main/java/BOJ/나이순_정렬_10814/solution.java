@@ -1,4 +1,4 @@
-package 나이순_정렬_10814;
+package main.java.BOJ.나이순_정렬_10814;
 
 import java.util.Arrays;
 import java.util.Comparator;

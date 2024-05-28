@@ -41,10 +41,10 @@ public class solution {
     }
 
     static void move(int y, int x, int dir) {
-        if(area[y][x] == 0)
+        if(area[y][x] == 0) // 현재 위치가 청소가 안됐을 경우, +1
             cnt++;
 
-        area[y][x] = -1;
+        area[y][x] = -1;    // -1 = 청소한 곳
 
         if(area[y + dy[0]][x + dx[0]] != 0 &&       // 네 방향 중 청소할 구역이 없다면
                 area[y + dy[1]][x + dx[1]] != 0 &&
@@ -57,14 +57,14 @@ public class solution {
         } else {    // 청소할 구역이 있다면
 
             for(int i = 0; i < 4; i++) {
-                int currentDir = (dir + (4 - i) + 3) % 4;
+                int currentDir = (dir + (4 - i) + 3) % 4;   // 반시계 방향으로 돌기
 
                 ny = y + dy[currentDir];
                 nx = x + dx[currentDir];
 
                 if(area[ny][nx] == 0) {
                     move(ny, nx, currentDir);
-                    return;
+                    return;     // 올바른 방향으로 나아갔을 경우 재귀 호출이 끝난 후 다른 방향도 탐색하지 않도록 return
                 }
             }
         }

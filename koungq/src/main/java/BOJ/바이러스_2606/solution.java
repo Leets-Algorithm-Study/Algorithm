@@ -35,7 +35,6 @@ public class solution {
     static void bfs(int start) {
         Queue<Integer> queue = new LinkedList<>();
 
-        queue.add(start);
         visited[start] = 1;
         queue.add(start);
         while(!queue.isEmpty()){

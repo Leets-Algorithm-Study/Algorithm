@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class solution {
@@ -14,7 +14,7 @@ public class solution {
 
     static int[] dy = new int[]{-1, 0, 1, 0};
     static int[] dx = new int[]{0, 1, 0, -1};
-    static int nx, ny, n, cnt, total = 0;
+    static int nx, ny, n, cnt = 0;
     static ArrayList<Integer> houses = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
@@ -27,16 +27,15 @@ public class solution {
         visited = new boolean[n][n];
 
         for(int i = 0; i < n; i++) {
-            char[] token = new StringTokenizer(br.readLine()).nextToken().toCharArray();    // 지도 입력 받기
-            for(int j = 0; j < n; j++) {
-                map[i][j] = (token[j] == '1');
+            String line = br.readLine();
+            for (int j = 0; j < n; j++) {
+                map[i][j] = line.charAt(j) == '1';
             }
         }
 
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 if(map[i][j] && !visited[i][j]){
-                    total++;
                     dfs(i, j);
                     houses.add(cnt);
                     cnt = 0;
@@ -44,9 +43,10 @@ public class solution {
             }
         }
 
-        System.out.println(total);
+        System.out.println(houses.size());
 
-        houses.sort(Comparator.naturalOrder()); // 오름차순 정렬
+        Collections.sort(houses);
+//        houses.sort(Comparator.naturalOrder()); // 오름차순 정렬
         for (Integer house : houses) {
             System.out.println(house);
         }

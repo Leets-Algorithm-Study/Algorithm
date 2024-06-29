@@ -19,11 +19,11 @@ public class solution {
         }
 
         //플로이드-워셜 알고리즘
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                for (int k = 0; k < N; k++) {
-                    if (graph[j][i] == 1 && graph[i][k] == 1) {
-                        graph[j][k] = 1;
+        for(int k = 0; k<N; k++){
+            for(int i = 0; i<N; i++){
+                for(int j = 0; j<N; j++){
+                    if(graph[i][k]==1&&graph[k][j]==1){
+                        graph[i][j] = 1;
                     }
                 }
             }
